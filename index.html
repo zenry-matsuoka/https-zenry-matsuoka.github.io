@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <style>
+      * {
+        background-color: blue;
+        color: white;
+        font-family:monospace;
+      }
+    </style>
+
+    <script>
+      var container, canvas, context;
+
+      var stars = [100]
+
+      function Vector3(x, y, z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.add = function (vector) {
+          // adds a vector
+          var sum = Vector3(this.x+vector.x,this.y+vector.y,this.z+vector.z);
+          console.log()
+          return sum;
+        }
+        this.multiply = function (scalar) {
+          // multiplies itself by a scalar
+          return Vector3(this.x*scalar,this.y*scalar,this.z*scalar);
+        }
+        this.normalize = function () {
+          // finds the normal of the vector
+          return Vector3(this.x,this.y,this.z).multiply(1/((this.x^2+this.y^2+this.z^2)^(1/2)));
+        }
+      }
+
+      function Star(x, y, r) {
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.update = function () {
+          this.x += 0.01*r;
+          if (this.x > canvas.width) {
+            this.x = -this.r;
+          }
+        }
+        this.draw = function () {
+          context.fillStyle = "#FFFFFF";
+          context.fillRect(this.x,this.y,this.r,this.r);
+        }
+      }
+
+      function init() {
+        canvas = document.createElement('canvas');
+        canvas.width = 800;
+        canvas.height = 800;
+
+        context = canvas.getContext('2d');
+
+        container = document.getElementById("container");
+        container.appendChild(canvas);
+
+        context.fillStyle = "#000000";
+        context.fillRect(0,0,canvas.width,canvas.height);
+        document.addEventListener('click',draw, false);
+
+        for (var i = 0; i < 100; i++) {
+          stars[i] = new Star(randInt(canvas.width),randInt(canvas.height),randInt(100))
+        }
+      }
+
+      function randInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+
+      function draw() {
+        context.fillStyle = "#000000"
+        context.fillRect(0,0,canvas.width,canvas.height);
+
+
+        for (var i = 0; i < stars.length; i++) {
+          stars[i].draw();
+          stars[i].update();
+        }
+        setTimeout(draw,1);
+      }
+    </script>
+  </head>
+  <body onload="init();" id="container">
+  </body>
+</html>
