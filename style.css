@@ -1,0 +1,13 @@
+* {
+  font-family: monospace;
+}
+
+.title {
+  font-size: 40px;
+}
+
+.timer {
+  position: absolute;
+  margin-top: 90%;
+  font-size: 60px;
+}
