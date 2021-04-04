@@ -1,0 +1,103 @@
+* {
+  transition: width 0.3s, height 0.3s, transform 0.5s, opacity 0.2s, border-radius 0.4s;
+  user-select: none;
+  user-drag: none;
+  font-family: monospace;
+}
+
+body {
+  background-image: url("images\\final grid.png");
+  background-position: 10%;
+  background-color: rgba(0,0,0,0); /* Tint color */
+  background-blend-mode: multiply;
+  /* background-color: #c4c1c0; */
+  transition: background-color 1s;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bit {
+  display: inline-block;
+  /* padding: 8px; */
+  position: absolute;
+  border-radius: 27.5px;
+  border: 2px none white;
+  overflow: hidden;
+  background-color: #dce9f7;
+  width: 55px;
+  height: 55px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.button {
+  /* background-color: red; */
+  cursor: auto;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: 5px;
+  position: absolute;
+}
+
+.small_button {
+  /* background-color: orange; */
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  /* border-radius: 50%; */
+  margin-top: 10px;
+  position: absolute;
+}
+
+.loop_bar {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  /* background-color: darkgrey; */
+  margin-top: calc(100vh - 60px - 20px);
+}
+
+.loop_button {
+  cursor: pointer;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+  margin-left: 25px;
+  border-radius: 50%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  transform: translate(0%, -50%);
+}
+
+video {
+  width: 250px;
+  height: 250px;
+  transform: scaleX(-1);
+  position:absolute;
+}
+
+canvas {
+  margin-top: 10px;
+  margin-left: 5px;
+  /* transform: translate(-50%,-50%); */
+}
+
+input {
+  z-index: 10;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 30px;
+  border: 0px none white;
+  background: none;
+  font-size: 36px;
+  overflow-x: visible;
+  display: inline-block;
+  outline: none;
+}
+
+input:focus {
+  border-bottom: 2px dotted black;
+}
