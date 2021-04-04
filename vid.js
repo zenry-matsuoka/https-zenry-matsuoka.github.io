@@ -12,13 +12,13 @@ loop_playing = false;
 
 loop_play_button.onclick = () => {
   loop_playing = !loop_playing;
-  if (loop_playing) {
-    loop_play_button.style.borderRadius = "0%";
+  // if (loop_playing) {
+    // loop_play_button.style.borderRadius = "0%";
     play_all_bits();
-  } else {
-    loop_play_button.style.borderRadius = "50%";
-    stop_all_bits();
-  }
+  // } else {
+    // loop_play_button.style.borderRadius = "50%";
+    // stop_all_bits();
+  // }
   stop_click();
 }
 
