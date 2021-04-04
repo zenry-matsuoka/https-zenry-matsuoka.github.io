@@ -1,16 +1,43 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="ui.css">
     <script src="libs\p5.js"></script>
     <script src="libs\p5.sound.js"></script>
-    <script src="sketch.js"></script>
-    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="title">Create</div>
-    <div class="canvasItems">
-      <div>note</div>
+    <input id="title" value="Name your board"></input>
+    <div class='settings'>
+      <div class='settings_icon'><img src="images\settings.svg"></div>
+      <div class='settings_title'>
+        settings
+      </div>
+      <div class='settings_content' hidden>
+        <div class='text' id='clear'>Clear all bits</div>
+        <div class='dropdown'>
+          <div class="dropbtn">Choose theme</div>
+          <div id="themeDropdown" class="dropdown-content">
+            <a class='themeOne'>modern</a>
+            <a class='themeTwo'>glacier</a>
+            <a class='themeThree'>concrete</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="timer">0.0s</div>
+    <div class='help'>
+      <div class='help_icon'><img src="images\About III.svg"></div>
+      <div class='help_title'>
+        about
+      </div>
+    </div>
   </body>
+
+  <div class="loop_bar"></div>
+  <!-- <script src="great_loop.js"></script> -->
+  <script src="ui.js"></script>
+  <script src="p5-audio.js"></script>
+  <script src="p5-control.js"></script>
+  <script src="vid.js"></script>
+  <script src="soundbit.js"></script>
 </html>
