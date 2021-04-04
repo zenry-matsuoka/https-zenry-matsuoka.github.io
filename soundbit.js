@@ -133,7 +133,11 @@ function bit () {
   }
 
   this.reduce_z = () => {
-    div.style.zIndex = (parseInt(div.style.zIndex)-1).toString();
+    if (parseInt(div.style.zIndex) - 1 > 0) {
+      div.style.zIndex = (parseInt(div.style.zIndex)-1).toString();
+    } else {
+      div.style.zIndex = "0";
+    }
   }
 
   this.drag_start = () => {
@@ -184,7 +188,6 @@ function bit () {
   div.dblclick = () => {
     this.drag_start();
   }
-
   div.onmouseup = () => {
     if (this.dragging) {
       this.x = this.new_x;
