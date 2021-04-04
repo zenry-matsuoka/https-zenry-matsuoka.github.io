@@ -6,7 +6,7 @@ const loop_play_button = document.createElement('img');
 const input = document.querySelector('#title');
 
 loop_play_button.className = 'loop_button';
-loop_play_button.src = "images\\Icons\\The Great Loop (Play) II.svg"
+loop_play_button.src = "images\\Icons\\The Great Loop\\The Great Loop (Play) II.svg"
 // loop_play_button.style.backgroundColor = 'orange';
 loop_bar.appendChild(loop_play_button);
 loop_playing = false;
@@ -14,11 +14,11 @@ loop_playing = false;
 loop_play_button.onclick = () => {
   loop_playing = !loop_playing;
   if (loop_playing) {
-    loop_play_button.src = "images\\Icons\\The Great Loop (Stop) II.svg";
+    loop_play_button.src = "images\\Icons\\The Great Loop\\The Great Loop (Stop) II.svg";
     play_all_bits();
     // loop_check();
   } else {
-    loop_play_button.src = "images\\Icons\\The Great Loop (Play) II.svg";
+    loop_play_button.src = "images\\Icons\\The Great Loop\\The Great Loop (Play) II.svg";
     stop_all_bits();
   }
   stop_click();
@@ -27,7 +27,7 @@ loop_play_button.onclick = () => {
 function loop_check () {
   if (are_bits_done()) {
     loop_playing = false;
-    loop_play_button.src = "images\\Icons\\The Great Loop (Stop) II.svg";
+    loop_play_button.src = "images\\Icons\\The Great Loop\\The Great Loop (Stop) II.svg";
     return true;
   }
   console.log("checking");

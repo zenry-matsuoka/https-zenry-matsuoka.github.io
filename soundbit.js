@@ -43,26 +43,26 @@ function bit () {
 
   let rec_button = document.createElement('img');
   rec_button.className = 'button';
-  rec_button.src = "images\\Icons\\Record X.svg";
+  rec_button.src = "images\\Icons\\Record\\Record X.svg";
   rec_button.style.opacity = 0.5;
   rec_button.style.zIndex = 1;
   div.appendChild(rec_button);
 
   let aud_button = document.createElement('img');
   aud_button.className = 'small_button';
-  aud_button.src = "images\\Icons\\Microphone III.svg"
+  aud_button.src = "images\\Icons\\Microphone\\Microphone III.svg"
   aud_button.style.marginLeft = "100px";
   div.appendChild(aud_button);
 
   let vid_button = document.createElement('img');
   vid_button.className = 'small_button';
-  vid_button.src = "images\\Icons\\Camera III.svg"
+  vid_button.src = "images\\Icons\\Camera\\Camera III.svg"
   vid_button.style.marginLeft = "60px";
   div.appendChild(vid_button);
 
   let resize_button = document.createElement('img');
 
-  resize_button.src = "images\\Icons\\Expand III.svg";
+  resize_button.src = "images\\Icons\\Expand\\Expand III.svg";
   resize_button.className = 'small_button';
   resize_button.style.marginLeft = "57px";
 
@@ -97,7 +97,7 @@ function bit () {
 
   this.play_start = () => {
 
-    rec_button.src = "images\\Icons\\Pause III.svg";
+    rec_button.src = "images\\Icons\\Pause\\Pause III.svg";
 
     if (!this.playback_has_been_setup) {this.play_setup();}
     if (this.has_video) {this.vid_playback.hidden = false;this.vid_live.hidden = true;}
@@ -114,7 +114,7 @@ function bit () {
 
   this.play_stop = () => {
 
-    rec_button.src = "images\\Icons\\Play III.svg";
+    rec_button.src = "images\\Icons\\Play\\Play III.svg";
     this.vid_playback.pause();
   }
 
@@ -222,7 +222,7 @@ function bit () {
     switch (this.mode) {
       case 0:
         // this means the bit is just created. recording begins
-        rec_button.src = "images\\Icons\\Pause II.svg";
+        rec_button.src = "images\\Icons\\Pause\\Pause II.svg";
 
         if (this.has_video) {
           div.style.width = size_small+'px';div.style.height = size_small+'px';
@@ -234,7 +234,7 @@ function bit () {
           let sound_icon = document.createElement('img');
           sound_icon.className = 'small_button';
           sound_icon.style.marginLeft = "10px";
-          sound_icon.src = "images\\Icons\\Microphone I.svg";
+          sound_icon.src = "images\\Icons\\Microphone\\Microphone I.svg";
           div.appendChild(sound_icon);
         }
 
@@ -246,7 +246,7 @@ function bit () {
         break;
       case 1:
       // recording is done. neutral state
-        rec_button.src = "images\\Icons\\Play I.svg";
+        rec_button.src = "images\\Icons\\Play\\Play I.svg";
 
         stop_all_bits();
         this.record_stop();
@@ -259,7 +259,7 @@ function bit () {
         break;
       case 3:
         // stop audio
-        rec_button.src = "images\\Icons\\Play I.svg";
+        rec_button.src = "images\\Icons\\Play\\Play I.svg";
         this.play_stop();
         this.mode = 1;
         break;
@@ -280,13 +280,13 @@ function bit () {
     rec_button.style.cursor = "pointer";
 
     if (!this.has_audio) {
-      aud_button.src = "images\\Icons\\Microphone III.svg";
+      aud_button.src = "images\\Icons\\Microphone\\Microphone III.svg";
       if (!this.has_video) {
         rec_button.style.opacity = 0.5;
         rec_button.style.cursor = "auto";
       }
     } else {
-      aud_button.src = "images\\Icons\\Microphone I.svg";
+      aud_button.src = "images\\Icons\\Microphone\\Microphone I.svg";
     }
     stop_click();
   }
@@ -302,14 +302,14 @@ function bit () {
     rec_button.style.cursor = "pointer";
 
     if (!this.has_video) {
-      vid_button.src = "images\\Icons\\Camera III.svg";
+      vid_button.src = "images\\Icons\\Camera\\Camera III.svg";
       if (!this.has_audio) {
 
         rec_button.style.cursor = "auto";
         rec_button.style.opacity = 0.5;
       }
     } else {
-      vid_button.src = "images\\Icons\\Camera I.svg";
+      vid_button.src = "images\\Icons\\Camera\\Camera I.svg";
     }
     stop_click();
   }
@@ -321,7 +321,7 @@ function bit () {
   resize_button.onclick = () => {
     this.small = !this.small;
     if (this.small) {
-      resize_button.src = "images\\Icons\\Expand III.svg";
+      resize_button.src = "images\\Icons\\Expand\\Expand III.svg";
       div.style.width = size_small+"px";
       div.style.height = size_small+"px";
       this.vid_live.style.width = size_small+"px";
@@ -329,7 +329,7 @@ function bit () {
       this.vid_playback.style.width = size_small+"px";
       this.vid_playback.style.height = size_small+"px";
     } else {
-      resize_button.src = "images\\Icons\\retract III.svg";
+      resize_button.src = "images\\Icons\\retract\\retract III.svg";
       div.style.width = size_big+"px";
       div.style.height = size_big+"px";
       this.vid_live.style.width = size_big+"px";
