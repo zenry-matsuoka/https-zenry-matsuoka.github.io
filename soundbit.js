@@ -329,7 +329,7 @@ function bit () {
       this.vid_playback.style.width = size_small+"px";
       this.vid_playback.style.height = size_small+"px";
     } else {
-      resize_button.src = "images\\Icons\\retract\\Retract III.svg";
+      resize_button.src = "images\\Icons\\Retract\\Retract III.svg";
       div.style.width = size_big+"px";
       div.style.height = size_big+"px";
       this.vid_live.style.width = size_big+"px";
