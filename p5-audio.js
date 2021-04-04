@@ -40,8 +40,8 @@ const p5_audio_display = (sketch) => {
     let averageWaves = [length];
 
     sketch.rectMode(CENTER);
-    sketch.noStroke()
-    sketch.fill(0)
+    sketch.noStroke();
+    sketch.fill('#072e65');
     for (let i = 0; i < length; i++) {
       let av = 0;
       for (let j = -sampleSize; j < sampleSize; j++) {

@@ -213,6 +213,7 @@ function bit () {
 
           let sound_icon = document.createElement('img');
           sound_icon.className = 'small_button';
+          sound_icon.style.marginLeft = "10px";
           sound_icon.src = "images\\Microphone I.svg";
           div.appendChild(sound_icon);
         }
