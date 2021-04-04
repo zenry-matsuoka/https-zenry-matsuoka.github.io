@@ -2,31 +2,50 @@ let bits = [];
 let stream;
 let mouse_x, mouse_y;
 const loop_bar = document.querySelector('.loop_bar');
-const loop_play_button = document.createElement('div');
-const input = document.querySelector('input');
+const loop_play_button = document.createElement('img');
+const input = document.querySelector('#title');
 
 loop_play_button.className = 'loop_button';
-loop_play_button.style.backgroundColor = 'orange';
+loop_play_button.src = "images\\Icons\\The Great Loop (Play) II.svg"
+// loop_play_button.style.backgroundColor = 'orange';
 loop_bar.appendChild(loop_play_button);
 loop_playing = false;
 
 loop_play_button.onclick = () => {
   loop_playing = !loop_playing;
-  // if (loop_playing) {
-    // loop_play_button.style.borderRadius = "0%";
+  if (loop_playing) {
+    loop_play_button.src = "images\\Icons\\The Great Loop (Stop) II.svg";
     play_all_bits();
-  // } else {
-    // loop_play_button.style.borderRadius = "50%";
-    // stop_all_bits();
-  // }
+    // loop_check();
+  } else {
+    loop_play_button.src = "images\\Icons\\The Great Loop (Play) II.svg";
+    stop_all_bits();
+  }
   stop_click();
+}
+
+function loop_check () {
+  if (are_bits_done()) {
+    loop_playing = false;
+    loop_play_button.src = "images\\Icons\\The Great Loop (Stop) II.svg";
+    return true;
+  }
+  console.log("checking");
+  setTimeout(loop_check,100);
 }
 
 input.onclick = () => {
   stop_click();
 }
 
+input.onchange = () => {
+  input.blur();
+  stop_click();
+}
+
 window.onclick = () => {
+  document.querySelector('.landing').style.opacity = '0%';
+  document.querySelector('.landingBackground').style.opacity = '0%';
   for (var i = 0; i < bits.length; i++) {
     if (bits[i].mode == 1) {
       return false;
@@ -43,7 +62,6 @@ window.onclick = () => {
 }
 
 window.oncontextmenu = () => {
-    play_all_bits();
     return false;
 }
 
@@ -79,7 +97,8 @@ function stop_click() {
 
 function play_all_bits () {
   for (var i = 0; i < bits.length; i++) {
-    if (bits[i].mode > 0) {
+    if (bits[i].mode > 1) {
+      bits[i].vid_playback.currentTime = 0;
       bits[i].play_start();
     }
   }
@@ -99,4 +118,13 @@ function clear_all_bits () {
       bits[i].deactivate();
     }
   }
+}
+
+function are_bits_done () {
+  for (var i = 0; i < bits.legnth; i++) {
+    if (!bits[i].vid_playback.paused) {
+      return false;
+    }
+  }
+  return true;
 }

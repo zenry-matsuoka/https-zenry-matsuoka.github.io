@@ -7,29 +7,47 @@
     <script src="libs\p5.sound.js"></script>
   </head>
   <body>
+    <div class='landing'>
+      <h1>soundbit.me</h1>
+      <p>click anywhere to start recording</p>
+    </div>
+    <div class='landingBackground'></div>
     <input id="title" value="Name your board"></input>
     <div class='settings'>
-      <div class='settings_icon'><img src="images\settings.svg"></div>
+      <div class='settings_icon'><img src="images\Icons\settings.svg"></div>
       <div class='settings_title'>
         settings
       </div>
       <div class='settings_content' hidden>
-        <div class='text' id='clear'>Clear all bits</div>
+        <div class='dropdownClear'>
+          <div class="dropbtnClear">clear all bits</div>
+          <div id="themeDropdownClear" class="dropdown-contentClear">
+            <a class='clear'>are you sure?</a>
+          </div>
+        </div>
         <div class='dropdown'>
-          <div class="dropbtn">Choose theme</div>
+          <div class="dropbtn">choose theme</div>
           <div id="themeDropdown" class="dropdown-content">
             <a class='themeOne'>modern</a>
             <a class='themeTwo'>glacier</a>
             <a class='themeThree'>concrete</a>
+            <a class='themeFour'>dark</a>
+            <a class='themeFive'>sky</a>
+            <a class='themeSix'>purple rain</a>
           </div>
         </div>
       </div>
     </div>
     <div class='help'>
-      <div class='help_icon'><img src="images\About III.svg"></div>
+      <div class='help_icon'><img src="images\Icons\About III.svg"></div>
       <div class='help_title'>
         about
       </div>
+      <div class='help_text'>
+      During the lockdowns caused by the COVID-19 outbreak, people were disconnected from one another, locked within their own houses with little interaction. In response to this, SoundBit, a project by placeholder, was created to create and share fun clips with friends.
+      <br><br>As a team with little coding knowledge, there were bound to be struggles to complete the project by the deadline. However, through sheer luck, placeholder has produced a somewhat functioning website, allowing people to create bits of video and audio to share.
+      <br><br>Enjoy!
+    </div>
     </div>
   </body>
 

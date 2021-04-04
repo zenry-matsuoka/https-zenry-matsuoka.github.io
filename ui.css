@@ -1,3 +1,43 @@
+@font-face {
+    font-family: VulfSans;
+    src: url("font/VulfSansDemo-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: VulfSans;
+    font-weight: bold;
+    src: url("font/VulfSansDemo-Bold.otf") format("opentype");
+}
+
+* {
+  font-family: VulfSans;
+}
+
+.landing {
+  background: linear-gradient(322deg, rgba(135,129,189,1) 0%, rgba(162,134,192,1) 31%, rgba(189,141,191,1) 72%, rgba(244,152,157,1) 100%);
+  border-radius: 50px;
+  width: 50%;
+  height: 20%;
+  top: 40%;
+  left: 25%;
+  position: absolute;
+  z-index: 1000;
+  transition: opacity 1s;
+  text-align: center;
+  padding-top: 2.5%;
+}
+
+.landingBackground {
+  transform: translate(-10%, -10%);
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 1s;
+  z-index: 712;
+}
+
 .help {
   z-index: 10;
   overflow: hidden;
@@ -51,24 +91,31 @@
 .help_title {
   position: absolute;
   left: calc((100% - 20px) / 2);
-  top: 12.5px;
+  top: 8px;
   transform: translate(-50%, 0);
-  font-family: monospace;
   color: white;
   font-size: 20px;
-  transition: left 0.5s, opacity 0.5s;
+  transition: left 0.5s, opacity 0.5s, font-size 0.5s;
   opacity: 0%;
+}
+
+.help_text {
+  text-align: left;
+  margin: 60px 25px 15px 25px;
+  font-size: 18px;
+  color: white;
+  opacity: 0%;
+  transition: opacity 0.5s;
 }
 
 .settings_title {
   position: absolute;
   left: calc((100% - 50px) / 2);
-  top: 12.5px;
+  top: 8px;
   transform: translate(-50%, 0);
-  font-family: monospace;
   color: white;
   font-size: 20px;
-  transition: left 0.5s, opacity 0.5s;
+  transition: left 0.5s, opacity 0.5s, font-size 0.5s;
   opacity: 0%;
 }
 
@@ -81,7 +128,7 @@
   transform: translate(-50%, -55%);
 }
 
-.text {
+/* .text {
   font-family: monospace;
   color: white;
   font-size: 20px;
@@ -103,12 +150,19 @@
 
 #mute:hover {
   background-color: #88aee3;
+} */
+
+.dropdown {
+  padding: 50px 0px 50px 0px;
+}
+
+.dropdownClear {
+  padding: 50px 0px 50px 0px;
 }
 
 .dropbtn {
   text-align: center;
   background: #a9ccf5;
-  font-family: monospace;
   color: white;
   font-size: 20px;
   padding: 15px;
@@ -119,10 +173,6 @@
 
 .dropbtn:hover, .dropbtn:focus {
   background-color: #88aee3;
-}
-
-.dropdown {
-  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
 }
 
 #themeDropdown {
@@ -140,15 +190,58 @@
 }
 
 .dropdown-content a {
-  font-family: monospace;
   color: black;
   font-size: 20px;
   text-align: center;
-  padding: 12px 16px;
+  padding: 10px 16px;
   display: block;
+  cursor: pointer;
 }
 
 .dropdown a:hover {background-color: #ddd;}
+
+
+.dropbtnClear {
+  text-align: center;
+  background: #a9ccf5;
+  font-family: monospace;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  transition: border-radius 0.5s, background-color 0.5s;
+}
+
+.dropbtnClear:hover, .dropbtnClear:focus {
+  background-color: #f4989d;
+}
+
+#themeDropdownClear {
+  height: 0%;
+}
+
+.dropdown-contentClear {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100%;
+  overflow: hidden;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  transition: height 0.5s;
+  z-index: 1;
+}
+
+.dropdown-contentClear a {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 16px;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdownClear a:hover {background-color: #ddd;}
+
 
 .show {display: block;}
 

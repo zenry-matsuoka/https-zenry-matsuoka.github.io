@@ -31,7 +31,8 @@ body {
 }
 
 .button {
-  background-color: red;
+  /* background-color: red; */
+  cursor: auto;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -42,6 +43,7 @@ body {
 
 .small_button {
   /* background-color: orange; */
+  cursor: pointer;
   width: 35px;
   height: 35px;
   /* border-radius: 50%; */
@@ -59,6 +61,7 @@ body {
 }
 
 .loop_button {
+  cursor: pointer;
   position: absolute;
   width: 80px;
   height: 80px;
@@ -67,7 +70,6 @@ body {
   border-radius: 50%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   transform: translate(0%, -50%);
-  z-index: 10;
 }
 
 video {
@@ -91,4 +93,11 @@ input {
   border: 0px none white;
   background: none;
   font-size: 36px;
+  overflow-x: visible;
+  display: inline-block;
+  outline: none;
+}
+
+input:focus {
+  border-bottom: 2px dotted black;
 }
