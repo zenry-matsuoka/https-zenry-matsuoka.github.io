@@ -40,6 +40,7 @@ input.onclick = () => {
 
 input.onchange = () => {
   input.blur();
+  document.title = input.value;
   stop_click();
 }
 
